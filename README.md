@@ -14,17 +14,20 @@ Kubernetes Secret Maker
 Usage
 -----
 
+You can use this tool through Rust's Cargo:
+
 ```bash
+$ cargo install kubernetes-secret-maker
 $ NAME=test SK_MY_SECRET="my secret" kubernetes-secret-maker | kubectl apply -f -
 ```
 
-or with docker
+or with Docker:
 
 ```bash
 $ docker run --rm -e NAME=test -e SK_MY_SECRET="my secret" apolitical/kubernetes-secret-maker | kubectl apply -f -
 ```
 
-added safety
+For added safety, you can tell your shell not to remember commands that started with a space.
 
 ```bash
 $ HISTCONTROL=ignorespace
@@ -34,6 +37,9 @@ $  NAME=test SK_MY_SECRET="my secret" kubernetes-secret-maker | kubectl apply -f
 
 How it works
 ------------
+
+Provide a `NAME` for the resource that will be created, each secret should be prefixed with `SK_`, but this will be
+removed when output. Here's what just the output would look like: 
 
 ```bash
 $ NAME=test SK_MY_SECRET="my secret" kubernetes-secret-maker
@@ -51,3 +57,10 @@ Limitations
 -----------
 
 Most of the above is statically stored in the binary. There's currently no flexability in the `apiVersion` or `type`
+
+Contributing
+------------
+
+If you want to help, that's brilliant! Have a look at our [Contributing Guide](CONTRIBUTING.md). We also adhere to a 
+[Code of Conduct](CODE-OF-CONDUCT.md), so please check that out, it includes details on who to contact if you have any
+concerns. 
