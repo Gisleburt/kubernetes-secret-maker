@@ -1,7 +1,16 @@
 [package]
-name = "kubernetes-secret-maker"
+name = "kubesm"
 version = "0.1.0"
 authors = ["Daniel Mason <daniel@apolitical.co>"]
+description = "A tool for creating kubernetes secret objects without saving secrets to disk"
+license = "MIT"
+repository = "https://github.com/apolitical/kubernetes-secret-maker"
+readme = "README.md"
+keywords = ["kubernetes", "kubes", "k8s", "kubectl", "secret", "secrets"]
+categories = ["command-line-interface", "config", "development-tools"]
+
+[badges]
+circle-ci = { repository = "https://github.com/apolitical/kubernetes-secret-maker", branch = "master" }
 
 [dependencies]
 base64 = "^0.8.0"

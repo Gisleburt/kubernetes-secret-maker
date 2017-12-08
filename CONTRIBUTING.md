@@ -22,14 +22,14 @@ that's wrong, but don't have time to fix it, that's absolutely fine, just let
 us know where to look.
 
 **Something doesn't work and you can fix it:** You're officially a legend. If
-you haven't already, you can fork our repository and send us a [Pull Request]
-[pull-request]. If you've never done that before, there's a [cool guide here]
-[pr-guide]. We like code changes to have tests and we use Circle CI to run
-tests automatically. Assuming everything passes then one of our team will
-review the change. We might make suggestions so keep an eye out. If we feel
-we aren't able to merge the request, and it hasn't been active for two weeks
-we'll have to close it off. Don't worry though, closed requests can be reopened
-by making changes.
+you haven't already, you can fork our repository and send us a
+[Pull Request][pull-request]. If you've never done that before, there's a
+[cool guide here][pr-guide]. We like code changes to have tests and we use
+Circle CI to run tests automatically. Assuming everything passes then one of
+our team will review the change. We might make suggestions so keep an eye out.
+If we feel we aren't able to merge the request, and it hasn't been active for
+two weeks we'll have to close it off. Don't worry though, closed requests can
+be reopened by making changes.
 
 **Something is missing:** The project feels like it should do something, but
 doesn't. [Open an Issue][issue] and label it with **enhancement**. We can't
