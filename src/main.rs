@@ -6,7 +6,7 @@ extern crate serde;
 extern crate serde_yaml;
 
 use std::collections::HashMap;
-use std::env::vars;
+use std::env::{vars, var};
 
 #[derive(Serialize, Deserialize, Debug)]
 struct Metadata {
@@ -30,7 +30,7 @@ fn main() {
         api_version: "v1".to_string(),
         kind: "Secret".to_string(),
         metadata: Metadata {
-            name: "test".to_string(),
+            name: var("NAME").expect("You must pass NAME in the environment"),
         },
         resource_type: "Opaque".to_string(),
         data: HashMap::new(),
