@@ -24,25 +24,35 @@ struct Secret {
     data: HashMap<String, String>
 }
 
+impl Secret {
+    fn new(name: String, source: HashMap<String, String>) -> Secret {
+        Secret {
+            api_version: "v1".to_string(),
+            kind: "Secret".to_string(),
+            metadata: Metadata {
+                name,
+            },
+            resource_type: "Opaque".to_string(),
+            data: Secret::get_secrets(source),
+        }
+    }
 
-fn main() {
-    let mut secret = Secret {
-        api_version: "v1".to_string(),
-        kind: "Secret".to_string(),
-        metadata: Metadata {
-            name: var("NAME").expect("You must pass NAME in the environment"),
-        },
-        resource_type: "Opaque".to_string(),
-        data: HashMap::new(),
-    };
+    fn get_secrets(source: HashMap<String, String>) -> HashMap<String, String> {
+        source.iter()
+            // Remove keys that don't start SK_
+            .filter(|&(ref key, ref _value)| key.get(..3).unwrap_or_else(|| "") == "SK_".to_string())
+            // Remove SK_ from the key and base64 encode the value
+            .map(|(key, value)| (String::from(&key[3..]), base64::encode(&value)))
+            .collect()
+    }
 
-    vars().filter(|&(ref key, ref _value)| key.get(0..3).unwrap_or_else(|| "") == "SK_".to_string())
-        .map(|(key, value)| (String::from(&key[3..]), base64::encode(&value)))
-        .for_each(|(key, value)| { secret.data.insert(key.clone(), value.clone()); });
-
-
-    let serialized = serde_yaml::to_string(&secret).unwrap();
-
-    println!("{}", serialized);
+    fn to_yaml(&self) -> String {
+        serde_yaml::to_string(&self).expect("Could not serialise secret object")
+    }
 }
 
+fn main() {
+    let secret_name = var("NAME").expect("You must pass NAME in the environment");
+    let secret = Secret::new(secret_name, vars().collect());
+    println!("{}", secret.to_yaml());
+}
