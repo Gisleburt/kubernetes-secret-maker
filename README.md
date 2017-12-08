@@ -15,7 +15,21 @@ Usage
 -----
 
 ```bash
-$ SK_MY_SECRET="my secret" secret-maker | kubectl apply -f -
+$ NAME=test SK_MY_SECRET="my secret" secret-maker | kubectl apply -f -
+```
+
+or with docker
+
+```bash
+$ docker run --rm -e NAME=test -e SK_MY_SECRET="my secret" secret-maker | kubectl apply -f -
+```
+
+added safety
+
+```bash
+$ HISTCONTROL=ignorespace
+$  NAME=test SK_MY_SECRET="my secret" secret-maker | kubectl apply -f -
+  ^ extra space
 ```
 
 How it works
