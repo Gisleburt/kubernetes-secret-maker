@@ -15,20 +15,20 @@ Usage
 -----
 
 ```bash
-$ NAME=test SK_MY_SECRET="my secret" secret-maker | kubectl apply -f -
+$ NAME=test SK_MY_SECRET="my secret" kubernetes-secret-maker | kubectl apply -f -
 ```
 
 or with docker
 
 ```bash
-$ docker run --rm -e NAME=test -e SK_MY_SECRET="my secret" secret-maker | kubectl apply -f -
+$ docker run --rm -e NAME=test -e SK_MY_SECRET="my secret" apolitical/kubernetes-secret-maker | kubectl apply -f -
 ```
 
 added safety
 
 ```bash
 $ HISTCONTROL=ignorespace
-$  NAME=test SK_MY_SECRET="my secret" secret-maker | kubectl apply -f -
+$  NAME=test SK_MY_SECRET="my secret" kubernetes-secret-maker | kubectl apply -f -
   ^ extra space
 ```
 
@@ -36,7 +36,7 @@ How it works
 ------------
 
 ```bash
-$ NAME=test SK_MY_SECRET="my secret" secret-maker
+$ NAME=test SK_MY_SECRET="my secret" kubernetes-secret-maker
 ---
 apiVersion: v1
 kind: Secret

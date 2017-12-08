@@ -1,5 +1,5 @@
 [package]
-name = "secret-maker"
+name = "kubernetes-secret-maker"
 version = "0.1.0"
 authors = ["Daniel Mason <daniel@apolitical.co>"]
 
