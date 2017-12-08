@@ -62,5 +62,5 @@ Contributing
 ------------
 
 If you want to help, that's brilliant! Have a look at our [Contributing Guide](CONTRIBUTING.md). We also adhere to a 
-[Code of Conduct](CODE-OF-CONDUCT.md), so please check that out, it includes details on who to contact if you have any
+[Code of Conduct](CODE_OF_CONDUCT.md), so please check that out, it includes details on who to contact if you have any
 concerns. 

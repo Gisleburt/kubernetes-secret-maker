@@ -8,7 +8,7 @@ We've provided these guidelines to help our contributors and supporters work
 with us, and each other, to produce and awesome project as quickly and easily
 as possible.
 
-Please keep in mind that we enforce a [Code of Conduct](CODE-OF-CONDUCT.md) to
+Please keep in mind that we enforce a [Code of Conduct](CODE_OF_CONDUCT.md) to
 help keep everyone in our community safe, including you.
 
 Types of Contribution
