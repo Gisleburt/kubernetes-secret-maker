@@ -46,3 +46,29 @@ impl Secret {
         serde_yaml::to_string(&self).expect("Could not serialise secret object")
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::Secret;
+
+    #[test]
+    fn e2e() {
+        let name = "test-name".to_owned();
+        let source = [
+            ("SK_THIS_SHOULD_APPEAR".to_owned(), "win".to_owned()),
+            ("THIS_SHOULD_NOT_APPEAR".to_owned(), "fail".to_owned()),
+        ].iter().cloned().collect();
+
+        let expected =
+"---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: \"test-name\"
+type: Opaque
+data:
+  THIS_SHOULD_APPEAR: d2lu".to_owned();
+
+        assert_eq!(expected, Secret::new(name, source).to_yaml());
+    }
+}
