@@ -6,7 +6,7 @@ description = "A tool for creating kubernetes secret objects without saving secr
 license = "MIT"
 repository = "https://github.com/apolitical/kubernetes-secret-maker"
 readme = "README.md"
-keywords = ["kubernetes", "kubes", "k8s", "kubectl", "secret", "secrets"]
+keywords = ["kubernetes", "kubes", "kubectl", "secret", "secrets"]
 categories = ["command-line-interface", "config", "development-tools"]
 
 [badges]
