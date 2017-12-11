@@ -1,6 +1,12 @@
 Kubernetes Secret Maker
 =======================
 
+[![GitHub release](https://img.shields.io/github/release/apolitical/kubernetes-secret-maker.svg)](https://github.com/apolitical/kubernetes-secret-maker/releases)
+[![GitHub license](https://img.shields.io/github/license/apolitical/kubernetes-secret-maker.svg)](https://github.com/apolitical/kubernetes-secret-maker/blob/master/LICENSE)
+[![CircleCI](https://img.shields.io/circleci/project/github/apolitical/kubernetes-secret-maker/master.svg)](https://circleci.com/gh/apolitical/kubernetes-secret-maker)
+[![Crates.io](https://img.shields.io/crates/d/kubesm.svg)](https://crates.io/crates/kubesm)
+[![Docker Pulls](https://img.shields.io/docker/pulls/apolitical/kubesm.svg)](https://hub.docker.com/r/apolitical/kubesm/)
+
 **Problem:** 
 - You want to put secrets inside your kubernetes cluster
 - You want to do it in a clean repeatable way
