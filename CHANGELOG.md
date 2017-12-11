@@ -7,6 +7,7 @@ Change log
 ### Fixed
 
 - Binary names in Dockerfile and README
+- Crates.io link to CircleCI
 
 ### Added
 

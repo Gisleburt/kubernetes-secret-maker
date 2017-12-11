@@ -10,7 +10,7 @@ keywords = ["kubernetes", "kubes", "kubectl", "secret", "secrets"]
 categories = ["command-line-interface", "config", "development-tools"]
 
 [badges]
-circle-ci = { repository = "https://github.com/apolitical/kubernetes-secret-maker", branch = "master" }
+circle-ci = { repository = "apolitical/kubernetes-secret-maker", branch = "master" }
 
 [dependencies]
 base64 = "^0.8.0"
