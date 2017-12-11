@@ -17,21 +17,21 @@ Usage
 You can use this tool through Rust's Cargo:
 
 ```bash
-$ cargo install kubernetes-secret-maker
-$ NAME=test SK_MY_SECRET="my secret" kubernetes-secret-maker | kubectl apply -f -
+$ cargo install kubesm
+$ NAME=test SK_MY_SECRET="my secret" kubesm | kubectl apply -f -
 ```
 
 or with Docker:
 
 ```bash
-$ docker run --rm -e NAME=test -e SK_MY_SECRET="my secret" apolitical/kubernetes-secret-maker | kubectl apply -f -
+$ docker run --rm -e NAME=test -e SK_MY_SECRET="my secret" apolitical/kubesm | kubectl apply -f -
 ```
 
 For added safety, you can tell your shell not to remember commands that started with a space.
 
 ```bash
 $ HISTCONTROL=ignorespace
-$  NAME=test SK_MY_SECRET="my secret" kubernetes-secret-maker | kubectl apply -f -
+$  NAME=test SK_MY_SECRET="my secret" kubesm | kubectl apply -f -
   ^ extra space
 ```
 
@@ -42,7 +42,7 @@ Provide a `NAME` for the resource that will be created, each secret should be pr
 removed when output. Here's what just the output would look like: 
 
 ```bash
-$ NAME=test SK_MY_SECRET="my secret" kubernetes-secret-maker
+$ NAME=test SK_MY_SECRET="my secret" kubesm
 ---
 apiVersion: v1
 kind: Secret
