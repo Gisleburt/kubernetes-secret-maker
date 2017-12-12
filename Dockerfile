@@ -14,6 +14,6 @@ RUN cargo build --release
 ## App image
 FROM scratch
 
-COPY --from=builder /app/target/x86_64-unknown-linux-musl/release/secret-maker /secret-maker
+COPY --from=builder /app/target/x86_64-unknown-linux-musl/release/kubesm /kubesm
 
-CMD ["/secret-maker"]
+CMD ["/kubesm"]
