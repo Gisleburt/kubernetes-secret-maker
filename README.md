@@ -45,15 +45,17 @@ How it works
 ------------
 
 Provide a `NAME` for the resource that will be created, each secret should be prefixed with `SK_`, but this will be
-removed when output. Here's what just the output would look like: 
+removed when output. You can optionally provide `NAMESPACE`, but it isn't required. Here's what just the output would
+look like:
 
 ```bash
-$ NAME=test SK_MY_SECRET="my secret" kubesm
+$ NAME=test NAMESPACE=test-namespace SK_MY_SECRET="my secret" kubesm
 ---
 apiVersion: v1
 kind: Secret
 metadata:
   name: test
+  namespace: "test-namespace"
 type: Opaque
 data:
   MY_SECRET: bXkgc2VjcmV0
