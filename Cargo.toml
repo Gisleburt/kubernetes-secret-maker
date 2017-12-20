@@ -1,6 +1,6 @@
 [package]
 name = "kubesm"
-version = "1.0.1"
+version = "1.1.0"
 authors = ["Daniel Mason <daniel@apolitical.co>"]
 description = "A tool for creating kubernetes secret objects without saving secrets to disk"
 license = "MIT"
