@@ -7,6 +7,7 @@ use std::collections::HashMap;
 #[derive(Serialize, Deserialize, Debug)]
 struct Metadata {
     name: String,
+    namespace: Option<String>,
 }
 
 #[derive(Serialize, Deserialize, Debug)]
@@ -21,12 +22,13 @@ pub struct Secret {
 }
 
 impl Secret {
-    pub fn new(name: String, source: HashMap<String, String>) -> Secret {
+    pub fn new(name: String, namespace: Option<String>, source: HashMap<String, String>) -> Secret {
         Secret {
             api_version: "v1".to_string(),
             kind: "Secret".to_string(),
             metadata: Metadata {
                 name,
+                namespace,
             },
             resource_type: "Opaque".to_string(),
             data: Secret::get_secrets(source),
@@ -54,6 +56,7 @@ mod tests {
     #[test]
     fn e2e() {
         let name = "test-name".to_owned();
+        let namespace = None;
         let source = [
             ("SK_THIS_SHOULD_APPEAR".to_owned(), "win".to_owned()),
             ("THIS_SHOULD_NOT_APPEAR".to_owned(), "fail".to_owned()),
@@ -65,10 +68,11 @@ apiVersion: v1
 kind: Secret
 metadata:
   name: \"test-name\"
+  namespace: ~
 type: Opaque
 data:
   THIS_SHOULD_APPEAR: d2lu".to_owned();
 
-        assert_eq!(expected, Secret::new(name, source).to_yaml());
+        assert_eq!(expected, Secret::new(name, namespace, source).to_yaml());
     }
 }
