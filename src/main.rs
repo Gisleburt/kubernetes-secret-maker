@@ -1,8 +1,6 @@
-#[macro_use]
-extern crate serde_derive;
+extern crate kubesm;
 
-mod secret;
-use secret::Secret;
+use kubesm::secret::Secret;
 
 use std::env::{vars, var};
 

@@ -72,7 +72,7 @@ metadata:
 type: Opaque
 data:
   THIS_SHOULD_APPEAR: d2lu".to_owned();
-
+git check
         assert_eq!(expected, Secret::new(name, namespace, source).to_yaml());
     }
 }
