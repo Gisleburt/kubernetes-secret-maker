@@ -9,6 +9,10 @@ readme = "README.md"
 keywords = ["kubernetes", "kubes", "kubectl", "secret", "secrets"]
 categories = ["command-line-interface", "config", "development-tools"]
 
+[[bin]]
+name = "kubesm"
+doc = false
+
 [badges]
 circle-ci = { repository = "apolitical/kubernetes-secret-maker", branch = "master" }
 
